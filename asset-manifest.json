@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tehe/static/css/main.851f071a.css",
+    "main.js": "/tehe/static/js/main.d92bf561.js",
+    "index.html": "/tehe/index.html",
+    "main.851f071a.css.map": "/tehe/static/css/main.851f071a.css.map",
+    "main.d92bf561.js.map": "/tehe/static/js/main.d92bf561.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.851f071a.css",
+    "static/js/main.d92bf561.js"
+  ]
+}
