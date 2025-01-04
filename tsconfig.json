@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 出力されるJavaScriptのバージョン
+    "lib": ["dom", "esnext"], // 必要なライブラリを追加
+    "jsx": "react-jsx", // JSXの設定（React 17以降）
+    "strict": true, // 厳密な型チェック
+    "esModuleInterop": true,
+    "skipLibCheck": true, // 型定義ファイルのチェックをスキップ
+    "forceConsistentCasingInFileNames": true // ファイル名の大文字小文字の違いを厳密にチェック
+  },
+  "include": ["src"]
+}
