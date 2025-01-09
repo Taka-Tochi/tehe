@@ -7,8 +7,8 @@ import Navbar from './components/Navbar';  // Navbarコンポーネントをイ�
 const App: React.FC = () => {
   return (
     <Router basename="/tehe">  {/* ここでbasenameを設定 */}
+      <Navbar />  {/* ナビゲーションバーを表示 */}
       <Routes>
-        <Navbar />  {/* ナビゲーションバーを表示 */}
         <Route path="/table" element={<Table />} />
         <Route path="/" element={<Home />} />
       </Routes>
