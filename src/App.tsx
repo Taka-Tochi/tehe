@@ -7,8 +7,8 @@ const App: React.FC = () => {
   return (
     <Router basename="/tehe">  {/* ここでbasenameを設定 */}
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/table" element={<Table />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
