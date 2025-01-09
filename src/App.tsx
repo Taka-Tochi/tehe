@@ -9,8 +9,8 @@ const App: React.FC = () => {
   return (
     <BrowserRouter basename="/tehe">  {/* ここでbasenameを設定 */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/table" element={<Table />} />
+        <Route path="/" element={<Table />} />
+        <Route path="/table" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
