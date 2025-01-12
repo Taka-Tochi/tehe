@@ -6,6 +6,12 @@ const Table: React.FC = () => {
   const [selectHinba, setSelectHinba] = useState<string>('');
   const [horseList, setHorselist] = useState(HorseIDData);
 
+  // Boba選択肢を並び替え（例: 名前順）
+  const sortedBobaData = [...BobaData].sort((a, b) => a.name.localeCompare(b.name));
+
+  // Hinba選択肢を並び替え（例: 名前順）
+  const sortedHinbaData = [...HinbaData].sort((a, b) => a.name.localeCompare(b.name));
+
   const fetchBobaData = async (val: string) => {
     try {
       setSelectBoba(val);
@@ -80,67 +86,18 @@ const Table: React.FC = () => {
       <label>牡馬血統：
         <select name="boba" value={selectBoba} onChange={bobaChange}>
           <option value="A00">-----選択-----</option>
-          <option value="A01">不明</option>
-          <option value="A02">ダーレーアラビアン系</option>
-          <option value="A03">セントサイモン系</option>
-          <option value="A04">タッチストン系</option>
-          <option value="A05">バードキャッチャー系</option>
-          <option value="A06">レイズアネイティヴ系</option>
-          <option value="A07">ヘイルトゥリーズン系</option>
-          <option value="A08">サンデーサイレンス系</option>
-          <option value="A09">ナスルーラ系</option>
-          <option value="A10">グレイソブリン系</option>
-          <option value="A11">ノーザンダンサー系</option>
-          <option value="A12">サドラーズウェルズ系</option>
-          <option value="A13">ダンチヒ系</option>
-          <option value="A14">ニジンスキー系</option>
-          <option value="A15">ノーザンテースト系</option>
-          <option value="A16">リファール系</option>
-          <option value="A17">バイアリーターク系</option>
-          <option value="A18">バザード系</option>
-          <option value="A19">トウルビヨン系</option>
-          <option value="A20">ゴドルフィンバルブ系</option>
-          <option value="A21">マンノウォー系</option>
-          <option value="A22">オルコックアラビアン系</option>
-          <option value="A23">ダイオメド系</option>
+          {sortedBobaData.map((item) => (
+            <option key={item.bobaId} value={item.bobaId}>{item.name}</option>
+          ))}
         </select>
       </label>
       <br />
       <label>牝馬血統：
         <select name="hinba" value={selectHinba} onChange={hinbaChange}>
-          <option value="B00">-----選択-----</option>
-          <option value="B01">不明</option>
-          <option value="B02">プロミス族</option>
-          <option value="B03">ペネロペ族</option>
-          <option value="B04">プリンセス族</option>
-          <option value="B05">バートンバルブメア族</option>
-          <option value="B06">ボーズメア族</option>
-          <option value="B07">フローリスカップ族</option>
-          <option value="B08">レイトンバルブメア族</option>
-          <option value="B09">アンティシペイション族</option>
-          <option value="B10">エボニー族</option>
-          <option value="B11">オールドボールドペグ族</option>
-          <option value="B12">ピラ族</option>
-          <option value="B13">バストラーメア族</option>
-          <option value="B14">メイドオブマッサム族</option>
-          <option value="B15">ヴィントナーメア族</option>
-          <option value="B16">フェアヘレン族</option>
-          <option value="B17">カミラ族</option>
-          <option value="B18">グレイハウンドメア族</option>
-          <option value="B19">マザーウエスタン族</option>
-          <option value="B20">セドバリーロイヤルメア族</option>
-          <option value="B21">ブルネット族</option>
-          <option value="B22">ミスアグネス族</option>
-          <option value="B23">フェアウェル族</option>
-          <option value="B24">ビディ族</option>
-          <option value="B25">ミスウィンザー族</option>
-          <option value="B26">チューベローズ族</option>
-          <option value="B27">ケードメア族</option>
-          <option value="B28">ワグテイル族</option>
-          <option value="B29">カナリーバード族</option>
-          <option value="B30">ピピンペグズダム族</option>
-          <option value="B31">ミラ族</option>
-          <option value="B32">マイナーファミリーライン</option>
+        <option value="B00">-----選択-----</option>
+          {sortedHinbaData.map((item) => (
+            <option key={item.hinbaId} value={item.hinbaId}>{item.name}</option>
+          ))}
         </select>
       </label>
       <br />

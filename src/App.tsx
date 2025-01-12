@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home'
 import Table from './Table'
 import Test from './Test'
+import Hantei from './Hantei'
 import Navbar from './components/Navbar';  // Navbarコンポーネントをインポート
 
 const App: React.FC = () => {
@@ -11,6 +12,7 @@ const App: React.FC = () => {
       
       <Routes>
         <Route path="/table" element={<Table />} />
+        <Route path="/hantei" element={<Hantei />} />
         <Route path="/test" element={<Test />} />
         <Route path="/" element={<Home />} />
       </Routes>
