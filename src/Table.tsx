@@ -44,6 +44,8 @@ const Table: React.FC = () => {
   };
 
   useEffect(() => {
+
+    document.title = '血統検索'; // タイトルを設定
     if (selectBoba) {
       fetchBobaData(selectBoba);
     }

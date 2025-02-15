@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef,useState,useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Row, Col,Table } from 'react-bootstrap';
 import { StartDebut, PreRace, PreRaceNinki,StartRaceData,Choshi,SoshitsuData } from './SelectData';
+import { useNavigate } from "react-router-dom";
 
 const Hantei: React.FC = () => {
+  const navigate = useNavigate();
   const [soshitsuList, setSoshitsuList] = useState(SoshitsuData);
   const [viewBool, setviewBool] = useState(false)
   const [soshitsu, setSoshitsu] = useState<string>('');
@@ -21,6 +23,10 @@ const Hantei: React.FC = () => {
     lostcnt_out:0,
     lostcnt_etc:0,
   });
+
+    useEffect(() => {
+        document.title = 'オッズ判定'; // タイトルを設定
+      }, []);
 
     // 数値の増減処理（複数のカウントを扱う）
     const increment = (type: 'lostcnt_2' | 'lostcnt_3'| 'lostcnt_out'| 'lostcnt_etc') => {
@@ -75,6 +81,11 @@ const Hantei: React.FC = () => {
         console.log('Form Reset'); // フォームリセット時の処理
         setviewBool(false); // フラグの切り替え
     };
+
+        // 戻るボタンの処理
+        const backpage = () => {
+            navigate("/");
+        };
     
     // 入力値が変更されたときの処理
     const ataiChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -156,7 +167,7 @@ const Hantei: React.FC = () => {
 
     // forループを使って条件に合った場合に処理を抜ける
     for (let i = 0; i < soshitsuList.length; i++) {
-        if (parseFloat(soshitsuList[i].win_rh) > hyoji) {
+        if (parseFloat(soshitsuList[i].win_rh) >= hyoji) {
             setSoshitsu(soshitsuList[i].comm);
             break;  // 条件に合った場合、ループを抜ける
         }
@@ -169,7 +180,7 @@ const Hantei: React.FC = () => {
       <h2 className="text-center">素質チェック(単勝ライド用)</h2>
         <Form onSubmit={handleSubmit}>
                 <Row  className="mb-3">
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>初戦オッズ</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -180,10 +191,10 @@ const Hantei: React.FC = () => {
                         onChange={oddsInputChange}
                     />
                     </Col>
-                    <Col xs={3} className="d-flex mt-2"><Form.Label>倍</Form.Label></Col>
+                    <Col xs={2} className="d-flex mt-2"><Form.Label>倍</Form.Label></Col>
                 </Row>
                 <Row className='mb-3'>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>デビュー</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -197,7 +208,7 @@ const Hantei: React.FC = () => {
                     </Col> 
                 </Row>
                 <Row className='mb-3'>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>2歳G1</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -218,7 +229,7 @@ const Hantei: React.FC = () => {
                 {/* 2歳G1が未出走以外のときだけ表示 */}
                 {(formData.prerace !== '' && formData.prerace !== '0') && (
                 <Row className='mb-3'>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>2歳G1人気</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -241,7 +252,7 @@ const Hantei: React.FC = () => {
                 {/* 2歳G1を選択したときだけ表示 */}
                 {formData.prerace !== '' && (
                 <Row className='mb-3'>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>初戦レース</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -269,7 +280,7 @@ const Hantei: React.FC = () => {
                 {/* 2歳G1が未出走以外のときだけ表示 */}
                 {formData.prerace !== '' && (
                 <Row className='mb-3'>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>調子</Form.Label>
                     </Col>
                     <Col xs={6} sm={12}>
@@ -290,7 +301,7 @@ const Hantei: React.FC = () => {
                 )}
                 {(formData.prerace !== '' && formData.prerace === '0') && (
                 <Row>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>2着回数</Form.Label>
                     </Col>
                     <Col xs={4} sm={10} className="d-flex align-items-center justify-content-center">
@@ -314,7 +325,7 @@ const Hantei: React.FC = () => {
                 )}
                 {(formData.prerace !== '' && formData.prerace === '0') && (
                 <Row>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>3着回数</Form.Label>
                     </Col>
                     <Col xs={4} sm={10} className="d-flex align-items-center justify-content-center">
@@ -338,7 +349,7 @@ const Hantei: React.FC = () => {
                 )}
                 {(formData.prerace !== '' && formData.prerace === '0') && (
                 <Row>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>着外回数</Form.Label>
                     </Col>
                     <Col xs={4} sm={10} className="d-flex align-items-center justify-content-center">
@@ -361,7 +372,7 @@ const Hantei: React.FC = () => {
                 </Row>
                 )}
                 <Row>
-                    <Col xs={3} sm={12} className="d-flex align-items-center mt-2">
+                    <Col xs={4} sm={12} className="d-flex align-items-center mt-2">
                         <Form.Label>調整用</Form.Label>
                     </Col>
                     <Col xs={4} sm={10} className="d-flex align-items-center justify-content-center">
@@ -396,19 +407,21 @@ const Hantei: React.FC = () => {
         {viewBool &&(
         <Table>
             <thead>
-            <tr>
-                <td>調整後オッズ</td>
-                <td>素質</td>
-            </tr>
+                <tr>
+                    <td>調整後オッズ</td>
+                    <td>素質</td>
+                </tr>
             </thead>
             <tbody>
-                <td>{viewOdds}倍</td>
-                <td>{soshitsu}</td>
+                <tr>
+                    <td>{viewOdds}倍</td>
+                    <td>{soshitsu}</td>
+                </tr>
             </tbody>
         </Table>
         )}
         {viewBool &&(
-        <Table striped bordered hover className="mt-3">
+        <Table striped bordered hover className="mt-3" style={{ fontSize: '12px' }}>
             <thead>
             <tr>
                 <th>素質</th>
@@ -420,15 +433,29 @@ const Hantei: React.FC = () => {
             <tbody>
             {soshitsuList.map((data, index) => (
                 <tr key={index}>
-                <td>{data.comm}</td>
-                <td>{data.win}</td>
-                <td>{data.win_r}</td>
-                <td>{data.win_rh}</td>
+                    <td>{data.comm}</td>
+                    <td>{data.win}</td>
+                    <td
+                        style={{/* backgroundColor:
+                            parseFloat(data.win_r) === parseFloat(viewOdds) ? "#d8c640"
+                          : parseFloat(data.win_r) > parseFloat(viewOdds) && parseFloat(soshitsuList[index-1]?.win_r) < parseFloat(viewOdds) ? "#d8c640"
+                          :""
+                        */}}
+                    >{data.win_r}</td>
+                    <td
+                        style={{/* backgroundColor:
+                            parseFloat(data.win_rh) === parseFloat(viewOdds) ? "#d8c640"
+                          : parseFloat(data.win_rh) > parseFloat(viewOdds) && parseFloat(soshitsuList[index-1]?.win_rh) < parseFloat(viewOdds) ? "#d8c640"
+                          :""
+                        */}}
+                    >{data.win_rh}</td>
                 </tr>
             ))}
             </tbody>
         </Table>
         )}
+        <br/>
+        <Button type="reset" variant="success" className="w-100" onClick={backpage}>戻る</Button> 
     </Container>
   );
 };

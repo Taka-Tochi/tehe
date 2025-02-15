@@ -4,6 +4,7 @@ import Home from './Home'
 import Table from './Table'
 import Test from './Test'
 import Hantei from './Hantei'
+import Blood from './Blood'
 import Navbar from './components/Navbar';  // Navbarコンポーネントをインポート
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/table" element={<Table />} />
         <Route path="/hantei" element={<Hantei />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/blood" element={<Blood />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
