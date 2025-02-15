@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tehe/static/css/main.ff353f9f.css",
-    "main.js": "/tehe/static/js/main.eb8856eb.js",
+    "main.js": "/tehe/static/js/main.c8cded01.js",
     "index.html": "/tehe/index.html",
     "main.ff353f9f.css.map": "/tehe/static/css/main.ff353f9f.css.map",
-    "main.eb8856eb.js.map": "/tehe/static/js/main.eb8856eb.js.map"
+    "main.c8cded01.js.map": "/tehe/static/js/main.c8cded01.js.map"
   },
   "entrypoints": [
     "static/css/main.ff353f9f.css",
-    "static/js/main.eb8856eb.js"
+    "static/js/main.c8cded01.js"
   ]
 }
