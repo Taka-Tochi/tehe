@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/tehe/static/css/main.ff353f9f.css",
-    "main.js": "/tehe/static/js/main.adc83b42.js",
+    "main.css": "/tehe/static/css/main.ef529626.css",
+    "main.js": "/tehe/static/js/main.e6816847.js",
+    "static/css/842.bbba1fca.chunk.css": "/tehe/static/css/842.bbba1fca.chunk.css",
+    "static/js/842.3cbfd915.chunk.js": "/tehe/static/js/842.3cbfd915.chunk.js",
+    "static/js/349.a769c57b.chunk.js": "/tehe/static/js/349.a769c57b.chunk.js",
     "index.html": "/tehe/index.html",
-    "main.ff353f9f.css.map": "/tehe/static/css/main.ff353f9f.css.map",
-    "main.adc83b42.js.map": "/tehe/static/js/main.adc83b42.js.map"
+    "main.ef529626.css.map": "/tehe/static/css/main.ef529626.css.map",
+    "main.e6816847.js.map": "/tehe/static/js/main.e6816847.js.map",
+    "842.bbba1fca.chunk.css.map": "/tehe/static/css/842.bbba1fca.chunk.css.map",
+    "842.3cbfd915.chunk.js.map": "/tehe/static/js/842.3cbfd915.chunk.js.map",
+    "349.a769c57b.chunk.js.map": "/tehe/static/js/349.a769c57b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff353f9f.css",
-    "static/js/main.adc83b42.js"
+    "static/css/main.ef529626.css",
+    "static/js/main.e6816847.js"
   ]
 }
