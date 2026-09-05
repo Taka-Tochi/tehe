@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/tehe/static/css/main.ef529626.css",
-    "main.js": "/tehe/static/js/main.a5f8d76a.js",
+    "main.js": "/tehe/static/js/main.67103f6d.js",
     "static/css/842.56ef4974.chunk.css": "/tehe/static/css/842.56ef4974.chunk.css",
     "static/js/842.714e3cc4.chunk.js": "/tehe/static/js/842.714e3cc4.chunk.js",
     "static/js/567.e899fcd3.chunk.js": "/tehe/static/js/567.e899fcd3.chunk.js",
     "index.html": "/tehe/index.html",
     "main.ef529626.css.map": "/tehe/static/css/main.ef529626.css.map",
-    "main.a5f8d76a.js.map": "/tehe/static/js/main.a5f8d76a.js.map",
+    "main.67103f6d.js.map": "/tehe/static/js/main.67103f6d.js.map",
     "842.56ef4974.chunk.css.map": "/tehe/static/css/842.56ef4974.chunk.css.map",
     "842.714e3cc4.chunk.js.map": "/tehe/static/js/842.714e3cc4.chunk.js.map",
     "567.e899fcd3.chunk.js.map": "/tehe/static/js/567.e899fcd3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ef529626.css",
-    "static/js/main.a5f8d76a.js"
+    "static/js/main.67103f6d.js"
   ]
 }
